@@ -30,9 +30,10 @@ The project serves as a quick template for web UI for e-commerce platforms.
 
 ## Products List
 
-![Products page](/assets/products-list-page.png)
+![Products page](/assets/product-list-page.png)
 ![Products Filtered page](/assets/products-list-filtered-page.png)
 
 ## Product Details
 
 ![Product Details page](/assets/product-details-page.png)
+![Product Details Pictures](/assets/product-details-page-modal.png)
