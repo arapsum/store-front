@@ -1,10 +1,14 @@
 import { Separator } from "#/components/ui/separator";
 import { cn } from "#/lib/utils";
-import { StarIcon } from "lucide-react";
+import { MinusIcon, PlusIcon, StarIcon } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import type { CategoryKey, LaptopAttribute, Product } from "#/types/product";
 import RenderSpecifications from "./specifications";
 import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog";
+import useCartStore from "#/store/store";
+import { toast } from "sonner";
+import { Button } from "../ui/button";
+import { Label } from "../ui/label";
 
 type Props = {
   product: Product<"laptop">;
@@ -16,6 +20,9 @@ function RenderLaptop({ product }: Props) {
 
   const [selectedImage, setSelectedImage] = useState(images[0]);
   const [selectedOption, setSelectedOption] = useState(options[0]);
+  const [quantity, setQuantity] = useState(1);
+
+  const { addToCart } = useCartStore();
 
   const attributes = selectedOption.attributes;
 
@@ -137,8 +144,8 @@ function RenderLaptop({ product }: Props) {
           </div>
 
           {/* Product Information  */}
-          <section className="flex flex-col space-y-4 lg:space-y-6">
-            <div className="space-y-2">
+          <section className="flex flex-col space-y-4">
+            <div className="space-y-1">
               <a href={`/?brand=${product.brand}`} className="text-base text-muted-foreground">
                 <span className="leading-6">{product.brand}</span>
               </a>
@@ -155,7 +162,7 @@ function RenderLaptop({ product }: Props) {
                 <StarIcon className="size-4 text-muted-foreground" />
               </div>
 
-              <Separator className="mt-4" />
+              <Separator className="mt-2" />
             </div>
 
             <div className="flex gap-4 items-center">
@@ -169,13 +176,10 @@ function RenderLaptop({ product }: Props) {
 
             <Separator />
             {/* Product Options */}
-            <div className="space-y-5 w-full">
+            <div className="space-y-4 w-full">
               {/* Colour options */}
-              <section className="space-y-2">
-                <h3 className="text-sm font-medium leading-4">
-                  Colours:&nbsp;
-                  <span className="text-xs text-muted-foreground">{attributes.colour}</span>
-                </h3>
+              <section className="flex gap-4 items-center">
+                <h3 className="text-sm font-medium leading-4">Colours:</h3>
                 <div className="flex gap-2 items-center lg:gap-4">
                   {availableColours.map((colour) => {
                     const compatible = isCompatible({ colour });
@@ -256,6 +260,42 @@ function RenderLaptop({ product }: Props) {
               </section>
             </div>
 
+            <div className="grid gap-2">
+              <Label htmlFor="quantity" className="text-base font-medium">
+                Quantity
+              </Label>
+              <div className="flex gap-2 items-center">
+                <Button
+                  variant="outline"
+                  type="button"
+                  size="icon"
+                  className="w-8 h-8 bg-transparent"
+                  onClick={() => {
+                    if (quantity === 1) {
+                      return;
+                    }
+                    setQuantity((prev) => (prev -= 1));
+                  }}
+                >
+                  <MinusIcon className="w-4 h-4" />
+                  <span className="sr-only">Decrease quantity</span>
+                </Button>
+                <div className="flex justify-center items-center w-12 h-8 text-sm font-medium bg-white rounded-md border border-gray-200 dark:border-gray-800 dark:bg-gray-950">
+                  {quantity}
+                </div>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  type="button"
+                  onClick={() => setQuantity((prev) => (prev += 1))}
+                  className="w-8 h-8 bg-transparent"
+                >
+                  <PlusIcon className="w-4 h-4" />
+                  <span className="sr-only">Increase quantity</span>
+                </Button>
+              </div>
+            </div>
+
             {/* Purchase and wishlist buttons */}
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <button
@@ -267,6 +307,10 @@ function RenderLaptop({ product }: Props) {
 
               <button
                 type="button"
+                onClick={() => {
+                  addToCart({ ...product, option: selectedOption, quantity: quantity });
+                  toast.success(`${quantity} ${product.brand} ${product.name} added to cart`);
+                }}
                 className="py-3 px-6 h-14 text-white bg-black rounded-sm border-transparent transition-transform duration-300 border-[1.5px] hover:bg-black/75"
               >
                 <span>Add to Cart</span>

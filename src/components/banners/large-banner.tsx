@@ -1,7 +1,6 @@
 import React from "react";
 import { OutlineButton } from ".";
 
-
 export function LargeBannerMobile() {
   return (
     <section className="overflow-hidden px-4 pb-0 space-y-12 md:hidden pt-22 bg-linear-to-br from-[#211C24] to-[#211C24]">

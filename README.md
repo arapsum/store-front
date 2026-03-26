@@ -3,7 +3,6 @@
 A generic e-commerce web UI shopfront for an electronics store selling laptops, smartphones, accessories, and other related hardware.
 The project serves as a quick template for web UI for e-commerce platforms.
 
-
 ## Features
 
 - Browse products by category (laptops, phones, accessories, etc.)
@@ -13,7 +12,6 @@ The project serves as a quick template for web UI for e-commerce platforms.
 - Secure user authentication and session management
 - Order history and order status tracking
 - Transactional email notifications (order confirmations, password resets)
-
 
 ## Technology Stack
 

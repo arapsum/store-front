@@ -66,7 +66,35 @@ type Product<T extends CategoryKey> = {
   specifications?: Specification<T>;
 };
 
+type AnyOption = { [K in keyof Attribute]: Option<K> }[keyof Attribute];
+
+type CartProduct<T extends CategoryKey> = {
+  id: string;
+  brand: string;
+  category: T;
+  name: string;
+  model: string;
+  modelNumber: string;
+  images: { url: string; order: number }[];
+  option: AnyOption;
+  year: number;
+  description?: string;
+  specifications?: Specification<T>;
+};
+
 type AnyProduct = { [K in keyof Attribute]: Product<K> }[keyof Attribute];
+type AnyCartProduct = { [K in keyof Attribute]: CartProduct<K> }[keyof Attribute];
+
+export function createCartProduct(
+  product: AnyProduct,
+  option: AnyOption,
+  quantity: number,
+): AnyCartProduct {
+  return {
+    ...product,
+    option,
+  };
+}
 
 export type {
   Product,
@@ -79,4 +107,7 @@ export type {
   PhoneAttribute,
   AnyProduct,
   CategoryKey,
+  AnyCartProduct,
+  CartProduct,
+  AnyOption,
 };

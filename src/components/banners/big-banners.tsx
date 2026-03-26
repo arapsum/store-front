@@ -147,8 +147,9 @@ export function BigBanners() {
                 type="button"
                 key={banner.title}
                 onClick={() => setCurrentSlide(index)}
-                className={`size-2.5 rounded-full transition-colors ${index === currentSlide ? "bg-gray-800" : "bg-gray-300"
-                  }`}
+                className={`size-2.5 rounded-full transition-colors ${
+                  index === currentSlide ? "bg-gray-800" : "bg-gray-300"
+                }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}

@@ -11,6 +11,7 @@ import {
 import Logo from "./Logo";
 import { Separator } from "./ui/separator.tsx";
 import { useState } from "react";
+import useCartStore from "#/store/store.ts";
 
 export const navItems = [
   { name: "Home", link: "/", isActive: true },
@@ -21,7 +22,7 @@ export const navItems = [
 
 export const iconButtons = [
   { icon: HeartIcon, link: "#/wishlist" },
-  { icon: ShoppingCartIcon, link: "#/cart" },
+  { icon: ShoppingCartIcon, link: "/cart" },
   { icon: UserIcon, link: "#/account" },
 ];
 
@@ -125,6 +126,8 @@ function MobileHeader({
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const { cart } = useCartStore();
+
   const pathname = "/";
   return (
     <>
@@ -150,9 +153,15 @@ export default function Header() {
           </nav>
           {/* Icon Buttons */}
           <div className="flex gap-3 items-center md:gap-4 lg:gap-6 shrink-0">
-            {iconButtons.map((item) => (
-              <IconButton key={item.link} {...item} />
-            ))}
+            <IconButton icon={HeartIcon} link="#/wishlist" />
+            <IconButton icon={UserIcon} link="#/account" />
+
+            <a href="/cart" className="relative">
+              <ShoppingCartIcon className="text-black size-6" />
+              <span className="flex absolute -top-3 -right-3 justify-center items-center text-xs font-medium text-gray-600 bg-amber-400 rounded-full size-4">
+                {cart.reduce((acc, item) => acc + item.quantity, 0)}
+              </span>
+            </a>
           </div>
         </div>
       </header>

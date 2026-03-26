@@ -2,6 +2,7 @@ import type { AnyProduct } from "#/types/product";
 import { HeartIcon, ShoppingCart, Zap } from "lucide-react";
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
+import useCartStore from "#/store/store";
 
 type Props = {
   product: AnyProduct;
@@ -55,6 +56,8 @@ function getDiscount(price: number, salePrice: number): number | null {
 function ProductCard({ product }: Props) {
   const [isInWishlist, setIsInWishlist] = useState(false);
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(0);
+
+  const { addToCart } = useCartStore();
 
   const { brand, name, id, images, options, modelNumber, year } = product;
 
@@ -274,6 +277,7 @@ function ProductCard({ product }: Props) {
           onMouseLeave={(e) => {
             (e.currentTarget as HTMLButtonElement).style.background = "#111827";
           }}
+          onClick={() => addToCart({ ...product, option: selectedOption, quantity: 1 })}
         >
           <ShoppingCart className="size-4" />
           Add to Cart

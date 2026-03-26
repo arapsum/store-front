@@ -1,7 +1,6 @@
 import ProductCard from "@/components/products/card";
 import products from "@/data/products";
 
-
 export function DiscountedProducts() {
   const discountedProducts = products.slice(10, 14);
   return (

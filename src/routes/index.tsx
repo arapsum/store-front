@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LargeBanner, SmallBanners, BigBanners } from "#/components/banners";
-import { BrowseByCategory, BrowseByProducts, DiscountedProducts } from "#/components/landing"
+import { BrowseByCategory, BrowseByProducts, DiscountedProducts } from "#/components/landing";
 
 export const Route = createFileRoute("/")({ component: App });
 

@@ -8,7 +8,6 @@ const tags = [
   { name: "Featured Products", value: "featured", isActive: false },
 ];
 
-
 export function BrowseByProducts() {
   const [activeTag, setActiveTag] = useState("new-arrivals");
 
