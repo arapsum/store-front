@@ -23,4 +23,16 @@ The project serves as a quick template for web UI for e-commerce platforms.
 
 ## Example
 
+### Landing page
+
 ![Landing page](/assets/store-landing-page.png)
+![Landing page 2](/assets/store-landing-page-2.png)
+
+## Products List
+
+![Products page](/assets/products-list-page.png)
+![Products Filtered page](/assets/products-lis-filtered-page-2.png)
+
+## Product Details
+
+![Product Details page](/assets/product-details-page.png)
