@@ -1,8 +1,8 @@
 import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
-import Header from "../components/Header.tsx";
-import Footer from "../components/Footer.tsx";
+import Header from "@/components/Header.tsx";
+import Footer from "@/components/Footer.tsx";
 
 import appCss from "../styles.css?url";
 import { Toaster } from "#/components/ui/sonner.tsx";

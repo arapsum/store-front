@@ -1,6 +1,6 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import ProductCard from "@/components/products/card";
-import EmptyProducts from "#/components/empty-products";
+import EmptyProducts from "#/components/errors/empty-products";
 import ProductFilters, { MobileFilter, MobileFilterButtons } from "@/components/products/filters";
 import {
   Pagination,

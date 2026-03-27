@@ -7,6 +7,7 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { ArrowRightIcon } from "lucide-react";
 import { useState } from "react";
 import Cart from "@/components/cart";
+import EmptyCart from "#/components/errors/empty-cart";
 
 export const Route = createFileRoute("/cart/")({
   component: RouteComponent,
@@ -89,7 +90,11 @@ function RouteComponent() {
         {/* steps */}
         <section className="flex flex-col gap-6 p-4  sm:p-8 w-full rounded-sm border lg:w-7/12 border-black/10">
           {activeStep === 1 ? (
-            cart.map((item) => <Cart item={item} removeItem={removeFromCart} />)
+            cart.length === 0 ? (
+              <EmptyCart />
+            ) : (
+              cart.map((item) => <Cart item={item} removeItem={removeFromCart} />)
+            )
           ) : activeStep === 2 ? (
             <ShippingForm setShippingForm={setShippingForm} navigateTo={navigateTo} />
           ) : activeStep === 3 && shippingForm ? (

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import products from "#/data/products";
 import RenderLaptop from "#/components/products/laptop";
-import NotFoundError from "#/components/not-found";
+import NotFoundError from "#/components/errors/not-found";
 
 export const Route = createFileRoute("/products/$id")({
   component: RouteComponent,
