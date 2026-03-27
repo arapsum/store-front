@@ -1,4 +1,5 @@
 import ShippingForm from "#/components/shipping-form";
+import PaymentForm from "#/components/payment-form";
 import { cn } from "#/lib/utils";
 import useCartStore from "#/store/store";
 import type { ShippingFormType } from "#/types/cart";
@@ -47,30 +48,33 @@ function RouteComponent() {
   };
 
   return (
-    <div className="flex flex-col gap-8 justify-between items-center mt-12 mb-12">
-      <h1 className="text-2xl font-medium">Your Shopping Cart</h1>
+    <div className="flex flex-col gap-6 justify-between items-center mt-8 px-4 sm:px-6 lg:px-8 sm:mt-12 mb-12">
+      <h1 className="sm:text-2xl text-xl font-medium">Your Shopping Cart</h1>
 
-      <section className="flex flex-col gap-8 items-center lg:flex-row lg:gap-16">
+      <section className="flex flex-wrap justify-around sm:justify-center gap-4 sm:gap-8 w-full items-center lg:flex-row lg:gap-16">
         {steps.map((step) => {
           const isActive = activeStep === step.id;
           return (
             <div
               key={step.id}
               className={cn(
-                "flex items-center gap-2 border-b-2 pb-4 transition-transform duration-300",
+                "flex items-center gap-2 border-b-2 pb-3 transition-transform duration-300",
                 isActive ? "border-gray-800" : "border-gray-400",
               )}
             >
               <span
                 className={cn(
-                  "size-6 rounded-full text-white p-4 flex items-center justify-center",
+                  "size-6 rounded-full text-white p-4 flex items-center justify-center text-sm",
                   isActive ? "bg-gray-800" : "bg-gray-400",
                 )}
               >
                 {step.id}
               </span>
               <p
-                className={cn("text-sm font-medium", isActive ? "text-gray-800" : "text-gray-400")}
+                className={cn(
+                  "text-xs sm:text-sm font-medium hidden sm:block",
+                  isActive ? "text-gray-800" : "text-gray-400",
+                )}
               >
                 {step.title}
               </p>
@@ -80,29 +84,31 @@ function RouteComponent() {
       </section>
 
       {/* Details */}
-      <main className="flex flex-col gap-16 w-full lg:flex-row">
+      <main className="flex flex-col gap-6 lg:gap-16 w-full lg:flex-row">
         {/* steps */}
-        <section className="flex flex-col gap-8 p-8 w-full rounded-sm border lg:w-7/12 border-black/10">
+        <section className="flex flex-col gap-6 p-4  sm:p-8 w-full rounded-sm border lg:w-7/12 border-black/10">
           {activeStep === 1 ? (
             cart.map((item) => (
               <div
-                className="flex justify-between items-center border-b border-dashed"
+                className="flex justify-between items-center gap-3 pb-4 sm:items-center sm:gap-0"
                 key={item.id + item.option.id}
               >
-                <div className="flex gap-8">
-                  <figure className="overflow-hidden relative bg-gray-50 rounded-sm size-32">
+                <div className="flex gap-3 sm:gap-8">
+                  <figure className="overflow-hidden shrink-0 relative bg-gray-50 rounded-sm size-20 sm:size-32">
                     <img
                       src={item.images[0].url}
                       alt={`Product ${item.brand} ${item.name} ${item.modelNumber}`}
-                      className="object-contain"
+                      className="object-contain size-full"
                     />
                   </figure>
                   {/* Details */}
-                  <section className="flex flex-col justify-between line-clamp-1">
+                  <section className="flex flex-col justify-between min-w-0">
                     <div className="flex flex-col gap-1">
-                      <p className="text-sm font-medium">
-                        {item.brand}&nbsp;{item.name}&nbsp;-&nbsp;{item.option.attributes.memory}
-                        &nbsp;-&nbsp;{item.option.attributes.storage}&nbsp;-&nbsp;
+                      <p className="sm:text-sm text-xs leading-snug font-medium">
+                        {item.brand}&nbsp;{item.name}&nbsp;-&nbsp;
+                        {item.option.attributes.memory}
+                        &nbsp;-&nbsp;{item.option.attributes.storage}
+                        &nbsp;-&nbsp;
                         {item.option.attributes.processor}&nbsp;-&nbsp;
                         {item.option.attributes.screenSize}
                       </p>
@@ -114,7 +120,7 @@ function RouteComponent() {
                         Storage: {item.option.attributes.storage}
                       </p>
                     </div>
-                    <p className="font-medium">
+                    <p className="font-medium mt-2 text-sm sm:text-base">
                       £{(item.option.salePrice * item.quantity).toFixed(2)}
                     </p>
                   </section>
@@ -123,7 +129,7 @@ function RouteComponent() {
                 <button
                   type="button"
                   onClick={() => removeFromCart(item)}
-                  className="flex justify-center items-center text-red-400 bg-red-100 rounded-full transition-all duration-300 cursor-pointer hover:bg-red-200 size-8"
+                  className="flex shrink-0 justify-center items-center text-red-400 bg-red-100 rounded-full transition-all duration-300 cursor-pointer hover:bg-red-200 size-8"
                 >
                   <Trash2Icon className="size-3" />
                 </button>
@@ -132,15 +138,15 @@ function RouteComponent() {
           ) : activeStep === 2 ? (
             <ShippingForm setShippingForm={setShippingForm} navigateTo={navigateTo} />
           ) : activeStep === 3 && shippingForm ? (
-            <div></div>
+            <PaymentForm />
           ) : (
             <p className="text-sm text-gray-500">Please fill in the shipping form to continue</p>
           )}
         </section>
 
-        {/* Cart Details */}
-        <section className="flex flex-col gap-8 p-8 w-full rounded-sm border shadow-lg lg:w-5/12 border-black/10 h-max">
-          <h2 className="font-semibold">Cart Details</h2>
+        {/* Order Summary */}
+        <section className="flex flex-col gap-6 p-4 w-full rounded-sm border shadow-lg sm:p-8 lg:w-5/12 border-black/10 h-max">
+          <h2 className="font-semibold">Order Summary</h2>
           <main className="flex flex-col gap-4">
             <div className="flex justify-between text-sm">
               <p className="text-gray-500">Subtotal</p>

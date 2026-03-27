@@ -3,12 +3,12 @@ import { cn } from "#/lib/utils";
 import { MinusIcon, PlusIcon, StarIcon } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import type { CategoryKey, LaptopAttribute, Product } from "#/types/product";
-import RenderSpecifications from "./specifications";
+import RenderSpecifications from "#/components/products/specifications";
 import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog";
 import useCartStore from "#/store/store";
 import { toast } from "sonner";
-import { Button } from "../ui/button";
-import { Label } from "../ui/label";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
 
 type Props = {
   product: Product<"laptop">;
@@ -176,7 +176,7 @@ function RenderLaptop({ product }: Props) {
 
             <Separator />
             {/* Product Options */}
-            <div className="space-y-4 w-full">
+            <div className="space-y-5 w-full">
               {/* Colour options */}
               <section className="flex gap-4 items-center">
                 <h3 className="text-sm font-medium leading-4">Colours:</h3>
@@ -198,7 +198,9 @@ function RenderLaptop({ product }: Props) {
                             : "border-transparent hover:border-muted-foreground",
                           !compatible && "opacity-30 cursor-not-allowed",
                         )}
-                        style={{ backgroundColor: colourHex[colour.toLowerCase()] ?? "#888" }}
+                        style={{
+                          backgroundColor: colourHex[colour.toLowerCase()] ?? "#888",
+                        }}
                       />
                     );
                   })}
@@ -308,8 +310,15 @@ function RenderLaptop({ product }: Props) {
               <button
                 type="button"
                 onClick={() => {
-                  addToCart({ ...product, option: selectedOption, quantity: quantity });
-                  toast.success(`${quantity} ${product.brand} ${product.name} added to cart`);
+                  addToCart({
+                    ...product,
+                    option: selectedOption,
+                    quantity: quantity,
+                  });
+                  toast.success(`${quantity} ${product.brand} ${product.name} added to cart`, {
+                    id: "product-added-to-cart",
+                    position: "bottom-right",
+                  });
                 }}
                 className="py-3 px-6 h-14 text-white bg-black rounded-sm border-transparent transition-transform duration-300 border-[1.5px] hover:bg-black/75"
               >
