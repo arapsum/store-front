@@ -76,25 +76,16 @@ type CartProduct<T extends CategoryKey> = {
   model: string;
   modelNumber: string;
   images: { url: string; order: number }[];
-  option: AnyOption;
+  option: Option<T>;
   year: number;
   description?: string;
   specifications?: Specification<T>;
 };
 
 type AnyProduct = { [K in keyof Attribute]: Product<K> }[keyof Attribute];
-type AnyCartProduct = { [K in keyof Attribute]: CartProduct<K> }[keyof Attribute];
-
-export function createCartProduct(
-  product: AnyProduct,
-  option: AnyOption,
-  quantity: number,
-): AnyCartProduct {
-  return {
-    ...product,
-    option,
-  };
-}
+type AnyCartProduct = {
+  [K in keyof Attribute]: CartProduct<K>;
+}[keyof Attribute];
 
 export type {
   Product,

@@ -144,8 +144,8 @@ function RenderLaptop({ product }: Props) {
           </div>
 
           {/* Product Information  */}
-          <section className="flex flex-col space-y-4">
-            <div className="space-y-1">
+          <section className="flex flex-col space-y-6">
+            <div className="space-y-2">
               <a href={`/?brand=${product.brand}`} className="text-base text-muted-foreground">
                 <span className="leading-6">{product.brand}</span>
               </a>
@@ -262,7 +262,7 @@ function RenderLaptop({ product }: Props) {
               </section>
             </div>
 
-            <div className="grid gap-2">
+            <section className="grid gap-2">
               <Label htmlFor="quantity" className="text-base font-medium">
                 Quantity
               </Label>
@@ -296,10 +296,10 @@ function RenderLaptop({ product }: Props) {
                   <span className="sr-only">Increase quantity</span>
                 </Button>
               </div>
-            </div>
+            </section>
 
             {/* Purchase and wishlist buttons */}
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 mt-4">
               <button
                 type="button"
                 className="py-3 px-6 h-14 rounded-sm transition-transform duration-300 border-black/40 border-[1.5px] hover:border-black/80"

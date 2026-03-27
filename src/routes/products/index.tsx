@@ -1,5 +1,6 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import ProductCard from "@/components/products/card";
+import EmptyProducts from "#/components/empty-products";
 import ProductFilters, { MobileFilter, MobileFilterButtons } from "@/components/products/filters";
 import {
   Pagination,
@@ -93,8 +94,12 @@ function RouteComponent() {
   const start = (search.page - 1) * itemsPerPage;
   const currentProducts = filteredProducts.slice(start, start + itemsPerPage);
 
+  const clearFilters = () => {
+    navigate({ search: (_) => ({ page: 1, category: undefined }) });
+  };
+
   const grid = (
-    <section className="space-y-10">
+    <section className="flex-1 space-y-10">
       <main className="space-y-6">
         <h3 className="flex items-center font-medium leading-4 tracking-[0.03em]">
           <span className="text-base text-[#6C6C6C]">Products Result:&nbsp;</span>
@@ -106,7 +111,6 @@ function RouteComponent() {
             <ProductCard key={product.id} product={product} />
           ))}
         </main>
-
         <Pagination>
           <PaginationContent>
             {/* Previous */}
@@ -156,11 +160,11 @@ function RouteComponent() {
       {/* </div> */}
 
       {/* Product Grid */}
-      <main className="flex items-start px-4 pb-10 mx-auto md:gap-6 md:px-6 md:pt-6 md:pb-14 xl:gap-10">
+      <main className="flex items-start px-4 pb-10 mx-auto w-full md:gap-6 md:px-6 md:pt-6 md:pb-14 xl:gap-10">
         <div className="hidden md:w-60 lg:block lg:w-[256px]">
           <ProductFilters search={search} onFilterChange={toggleFilter} />
         </div>
-        {grid}
+        {currentProducts.length === 0 ? <EmptyProducts onClearFilters={clearFilters} /> : grid}
       </main>
     </section>
   );
