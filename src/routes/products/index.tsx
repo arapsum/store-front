@@ -19,6 +19,7 @@ export const Route = createFileRoute("/products/")({
 
     return {
       page: Number(search.page ?? 1),
+      category: search.category ? (search.category as string) : undefined,
       brand: normalise(search.brand),
       memory: normalise(search.memory),
       storage: normalise(search.storage),
@@ -28,12 +29,14 @@ export const Route = createFileRoute("/products/")({
   component: RouteComponent,
 });
 
-type Search = { page: number } & Record<FilterKey, string[]>;
+type Search = { page: number; category?: string } & Record<FilterKey, string[]>;
 
 function RouteComponent() {
   const search = Route.useSearch() as Search;
 
   const navigate = useNavigate({ from: Route.fullPath });
+
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   const goToPage = (newPage: number) => {
     navigate({
@@ -62,9 +65,11 @@ function RouteComponent() {
     });
   };
 
-  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const filteredByCategory = search.category
+    ? products.filter((product) => product.category === search.category)
+    : products;
 
-  const filteredProducts = products.filter((product) => {
+  const filteredProducts = filteredByCategory.filter((product) => {
     return filterItems.every((item) => {
       const selected = search[item.value];
 
