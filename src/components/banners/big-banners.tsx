@@ -64,11 +64,9 @@ function BigBanner({
           </div>
         </div>
 
-        <a href="/#products" className="flex justify-center items-center">
-          <OutlineButton
-            className={`md:w-full w-fit transition-colors ${buttonClasses} ${buttonTextColour}`}
-          />
-        </a>
+        <OutlineButton
+          className={`md:w-full w-fit transition-colors ${buttonClasses} ${buttonTextColour}`}
+        />
       </div>
     </div>
   );

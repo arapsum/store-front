@@ -1,10 +1,18 @@
 import { Button } from "#/components/ui/button";
 import { cn } from "#/lib/utils.ts";
+import { Link } from "@tanstack/react-router";
 
 const OutlineButton = ({ className }: { className?: string }) => (
-  <a href="/products">
+  <Link
+    to="/products"
+    search={(prev) => ({
+      ...prev,
+      page: 1,
+    })}
+  >
     <Button
       variant="outline"
+      asChild
       className={cn(
         "gap-2 py-4 px-14 h-14 text-white rounded-sm transition-transform duration-300 bg-inherit border-[1.5px] border-white/40",
         className,
@@ -12,7 +20,7 @@ const OutlineButton = ({ className }: { className?: string }) => (
     >
       <span className="font-medium leading-6">Shop Now</span>
     </Button>
-  </a>
+  </Link>
 );
 
 export { OutlineButton };

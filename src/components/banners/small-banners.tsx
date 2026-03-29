@@ -249,9 +249,7 @@ function BigBanner() {
               Liquid Retina display.
             </p>
 
-            <a href="/#products">
-              <OutlineButton className="text-black hover:text-white hover:bg-black bg-inherit border-black/40" />
-            </a>
+            <OutlineButton className="text-black hover:text-white hover:bg-black bg-inherit border-black/40" />
           </div>
         </div>
         {/* Image */}
