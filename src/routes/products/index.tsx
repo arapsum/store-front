@@ -13,6 +13,7 @@ import {
 import { useState } from "react";
 import products from "#/data/products";
 import { filterItems, type FilterKey } from "#/data/filterOptions";
+import ProductsBreadcrumbs from "#/components/products/breadcrumbs";
 
 export const Route = createFileRoute("/products/")({
   validateSearch: (search) => {
@@ -51,6 +52,14 @@ function RouteComponent() {
   const toggleFilter = (key: string, value: string) => {
     navigate({
       search: (prev) => {
+        if (key === "category") {
+          return {
+            ...prev,
+            category: value,
+            page: 1,
+          };
+        }
+
         const current = (prev[key as keyof typeof prev] as string[]) ?? [];
 
         const exists = current.includes(value);
@@ -66,24 +75,26 @@ function RouteComponent() {
     });
   };
 
-  const filteredByCategory = search.category
-    ? products.filter((product) => product.category === search.category)
-    : products;
-
-  const filteredProducts = filteredByCategory.filter((product) => {
+  const filteredProducts = products.filter((product) => {
     return filterItems.every((item) => {
       const selected = search[item.value];
 
       if (!selected || selected.length === 0) return true;
 
+      if (item.value === undefined || item.value === null) return true;
+
+      if (item.value === "category") {
+        return selected.includes(product.category.toLowerCase());
+      }
+
       if (item.value === "brand") {
-        return selected.includes(product.brand);
+        return selected.includes(product.brand.toLowerCase());
       }
 
       return product.options.some((option) => {
-        const value = option.attributes[item.value as keyof typeof option.attributes];
+        const value = option.attributes[item.value as keyof typeof option.attributes] as string;
 
-        return selected.includes(value);
+        return selected.includes(value.toLowerCase());
       });
     });
   });
@@ -142,7 +153,7 @@ function RouteComponent() {
   );
 
   return (
-    <section className="overflow-hidden space-y-12 bg-white border-t border-black/40">
+    <section className="overflow-hidden space-y-10 lg:space-y-0  bg-white border-t border-black/40">
       {/* Mobile Filters */}
       <MobileFilterButtons onFilterClick={() => setIsFilterOpen(true)} />
       {isFilterOpen && (
@@ -155,12 +166,12 @@ function RouteComponent() {
         </div>
       )}
 
-      {/* <div className="hidden lg:block"> */}
-      {/*   <PageBreadcrumb /> */}
-      {/* </div> */}
+      <section className="hidden lg:block">
+        <ProductsBreadcrumbs category={search.category} />
+      </section>
 
       {/* Product Grid */}
-      <main className="flex items-start px-4 pb-10 mx-auto w-full md:gap-6 md:px-6 md:pt-6 md:pb-14 xl:gap-10">
+      <main className="flex items-start px-4 pb-10 mx-auto w-full md:gap-6 md:px-6 md:pb-14 xl:gap-10">
         <div className="hidden md:w-60 lg:block lg:w-[256px]">
           <ProductFilters search={search} onFilterChange={toggleFilter} />
         </div>

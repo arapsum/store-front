@@ -11,7 +11,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Slider } from "@/components/ui/slider";
 import { filterItems } from "#/data/filterOptions";
-import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
+import { Field, FieldContent, FieldGroup, FieldLabel } from "@/components/ui/field";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 function FilterCheckbox({
   label,
@@ -34,6 +35,17 @@ function FilterCheckbox({
         </FieldLabel>
       </Field>
     </FieldGroup>
+  );
+}
+
+function RadioBox({ label, value }: { label: string; value: string }) {
+  return (
+    <Field orientation="horizontal">
+      <RadioGroupItem value={value} id={value} />
+      <FieldContent>
+        <FieldLabel>{label}</FieldLabel>
+      </FieldContent>
+    </Field>
   );
 }
 
@@ -81,7 +93,7 @@ export function Filter({
   selected,
 }: {
   filterKey: string;
-  options: { label: string; count: number }[];
+  options: { label: string; value: string; count: number }[];
   selected: string[];
   onChange: (key: string, value: string) => void;
 }) {
@@ -96,15 +108,23 @@ export function Filter({
       </div>
 
       <div className="flex flex-col px-2 space-y-4">
-        {options.map((option) => (
-          <FilterCheckbox
-            key={option.label}
-            checked={selected.includes(option.label)}
-            onChange={() => onChange(filterKey, option.label)}
-            label={option.label}
-            count={option.count}
-          />
-        ))}
+        {filterKey === "category" ? (
+          <RadioGroup onValueChange={(val) => onChange(filterKey, val)}>
+            {options.map(({ value, label }) => (
+              <RadioBox key={value} label={label} value={value} />
+            ))}
+          </RadioGroup>
+        ) : (
+          options.map(({ value, label, count }) => (
+            <FilterCheckbox
+              key={value}
+              checked={selected.includes(value)}
+              onChange={() => onChange(filterKey, value)}
+              label={label}
+              count={count}
+            />
+          ))
+        )}
       </div>
     </ScrollArea>
   );
@@ -195,7 +215,7 @@ export default function ProductFilters({
   onFilterChange: (key: string, value: string) => void;
 }) {
   return (
-    <Accordion type="multiple" defaultValue={["brand"]} className="flex flex-col gap-6 max-w-62">
+    <Accordion type="multiple" defaultValue={["category"]} className="flex flex-col gap-6 max-w-62">
       {filterItems.map((item) => (
         <AccordionItem key={item.value} value={item.value}>
           <AccordionTrigger>{item.trigger}</AccordionTrigger>
