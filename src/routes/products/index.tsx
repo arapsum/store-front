@@ -127,7 +127,7 @@ function RouteComponent() {
 					<span className="text-xl text-black">{filteredProducts.length}</span>
 				</h3>
 				{/* Grid */}
-				<main className="grid grid-cols-2 gap-4  md:grid-cols-3 md:gap-6 lg:grid-cols-4 lg:gap-8">
+				<main className="grid grid-cols-2 gap-4 md:gap-6 lg:gap-8 min-[640px]:grid-cols-3 min-[1300px]:grid-cols-4">
 					{currentProducts.map((product) => (
 						<ProductCard key={product.id} product={product} />
 					))}
@@ -170,7 +170,7 @@ function RouteComponent() {
 	);
 
 	return (
-		<section className="overflow-hidden space-y-10 lg:space-y-0  bg-white border-t border-black/40">
+		<section className="overflow-hidden space-y-10 bg-white border-t lg:space-y-0 border-black/40">
 			{/* Mobile Filters */}
 			<MobileFilterButtons onFilterClick={() => setIsFilterOpen(true)} />
 			{isFilterOpen && (

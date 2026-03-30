@@ -1,9 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { HeartIcon, ShoppingCart, Zap } from "lucide-react";
 import { useState } from "react";
+import { cn } from "#/lib/utils";
 import useCartStore from "#/store/store";
 import type { AnyProduct } from "#/types/product";
-import { cn } from "#/lib/utils";
 
 type Props = {
 	product: AnyProduct;
@@ -86,7 +86,7 @@ function ProductCard({ product }: Props) {
 	if (attrs?.memory) specChips.push(attrs.memory);
 
 	return (
-		<div className="flex overflow-hidden relative flex-col bg-white rounded-sm ease-in-out select-none hover:-translate-y-0.5 group w-45 shadow-[0_1px_3px_rgba(0,0,0,0.06),0_4px_16px_rgba(0,0,0,0.08)] transition-[box-shadow,transform] duration-250 md:w-58 lg:w-65 hover:shadow-[0_4px_8px_rgba(0,0,0,0.06),0_16px_40px_rgba(0,0,0,0.14)]">
+		<div className="flex overflow-hidden relative flex-col w-40 bg-white rounded-sm ease-in-out select-none hover:-translate-y-0.5 group min-[400px]:w-44 min-[680px]:w-48 min-[720px]:w-52 min-[900px]:w-56 min-[1200px]:w-64 shadow-[0_1px_3px_rgba(0,0,0,0.06),0_4px_16px_rgba(0,0,0,0.08)] transition-[box-shadow,transform] duration-250 hover:shadow-[0_4px_8px_rgba(0,0,0,0.06),0_16px_40px_rgba(0,0,0,0.14)]">
 			{/* ── Image area ─────────────────────────────────────── */}
 			<div className="flex relative justify-center items-center px-4 pt-6 pb-4 bg-linear-to-br from-[#F8F8F8] to-[#EFEFEF]">
 				{/* Discount badge */}
