@@ -1,5 +1,6 @@
 import { ChevronDownIcon, ChevronLeftIcon } from "lucide-react";
 import { BsSliders } from "react-icons/bs";
+import { filterItems } from "#/data/filterOptions";
 import {
 	Accordion,
 	AccordionContent,
@@ -8,9 +9,6 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Slider } from "@/components/ui/slider";
-import { filterItems } from "#/data/filterOptions";
 import {
 	Field,
 	FieldContent,
@@ -18,6 +16,8 @@ import {
 	FieldLabel,
 } from "@/components/ui/field";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Slider } from "@/components/ui/slider";
 
 function FilterCheckbox({
 	label,
@@ -48,17 +48,35 @@ function FilterCheckbox({
 	);
 }
 
-function RadioBox({ label, value }: { label: string; value: string }) {
+function RadioBox({
+	label,
+	value,
+	checked,
+	onChange,
+}: {
+	label: string;
+	value: string;
+	checked: boolean;
+	onChange: (val: string) => void;
+}) {
 	return (
-		<Field orientation="horizontal">
-			<RadioGroupItem value={value} id={value} />
-			<FieldContent>
-				<FieldLabel>{label}</FieldLabel>
-			</FieldContent>
-		</Field>
+		<FieldGroup>
+			<Field className="flex gap-2" orientation="horizontal">
+				<Checkbox
+					checked={checked}
+					onCheckedChange={() => {
+						onChange(value);
+					}}
+				/>
+				<FieldLabel className="flex leading-6">
+					<span className="text-sm font-medium text-black capitalize">
+						{label}
+					</span>
+				</FieldLabel>
+			</Field>
+		</FieldGroup>
 	);
 }
-
 export function PriceFilter({ from, to }: { from: number; to: number }) {
 	return (
 		<AccordionItem value="price" className="space-y-6">
@@ -104,7 +122,7 @@ export function Filter({
 }: {
 	filterKey: string;
 	options: { label: string; value: string; count: number }[];
-	selected: string[];
+	selected: string | string[];
 	onChange: (key: string, value: string) => void;
 }) {
 	return (
@@ -118,23 +136,27 @@ export function Filter({
 			</div>
 
 			<div className="flex flex-col px-2 space-y-4">
-				{filterKey === "category" ? (
-					<RadioGroup onValueChange={(val) => onChange(filterKey, val)}>
-						{options.map(({ value, label }) => (
-							<RadioBox key={value} label={label} value={value} />
+				{filterKey === "category" && selected instanceof String
+					? options.map(({ value, label }) => {
+							return (
+								<RadioBox
+									key={value}
+									label={label}
+									value={value}
+									checked={selected === value}
+									onChange={(val) => onChange(filterKey, val)}
+								/>
+							);
+						})
+					: options.map(({ value, label, count }) => (
+							<FilterCheckbox
+								key={value}
+								checked={selected.includes(value)}
+								onChange={() => onChange(filterKey, value)}
+								label={label}
+								count={count}
+							/>
 						))}
-					</RadioGroup>
-				) : (
-					options.map(({ value, label, count }) => (
-						<FilterCheckbox
-							key={value}
-							checked={selected.includes(value)}
-							onChange={() => onChange(filterKey, value)}
-							label={label}
-							count={count}
-						/>
-					))
-				)}
 			</div>
 		</ScrollArea>
 	);

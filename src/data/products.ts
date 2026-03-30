@@ -1575,6 +1575,204 @@ const products: AnyProduct[] = [
 			},
 		},
 	},
+	{
+		id: "24",
+		category: "phone",
+		brand: "Samsung",
+		name: "Gallaxy S25",
+		model: "Galaxy S25 5G",
+		modelNumber: "SM-S931B",
+		year: 2025,
+		description:
+			"Essential productivity in a new, modern design. Enhanced performance, long-lasting battery life, and all-new innovative design makes this a device you can rely on. Dell Pro laptops are designed with up to 30% PCR plastic. AI PCs work smarter. AI capable PC with exceptional battery life, Intel Core Ultra processors, and a sleek, modular design for enhanced durability. With the help of Copilot in Windows, you have instant access to your own personal AI assistant using the Windows Copilot key. And with fast connectivity, you can stay productive from anywhere.",
+		options: [
+			{
+				id: "1",
+				sku: "1507674",
+				price: 659,
+				salePrice: 599,
+				quantity: 15,
+				attributes: {
+					colour: "Navy",
+					processor: "Snapdragon 8 Elite",
+					memory: "12GB",
+					storage: "128GB",
+					screenSize: '6.2"',
+					processorBrand: "Qualcomm",
+				},
+			},
+			{
+				id: "2",
+				sku: "15067675",
+				price: 799,
+				salePrice: 699,
+				quantity: 6,
+				attributes: {
+					colour: "Navy",
+					processor: "Snapdragon 8 Elite",
+					memory: "12GB",
+					storage: "256GB",
+					screenSize: '6.2"',
+					processorBrand: "Qualcomm",
+				},
+			},
+		],
+		images: [
+			{ url: "/products/samsung-galaxy-S25.jpg", order: 1 },
+			{ url: "/products/samsung-galaxy-S25-2.jpg", order: 2 },
+			{ url: "/products/samsung-galaxy-S25-3.jpg", order: 3 },
+			{ url: "/products/samsung-galaxy-S25-4.jpg", order: 4 },
+		],
+		specifications: {
+			Processor: {
+				Model: {
+					value: "",
+					derivedFrom: "processor",
+				},
+				Brand: {
+					value: "",
+					derivedFrom: "processorBrand",
+				},
+			},
+			Display: {
+				"Display Type": {
+					value: "AMOLED",
+				},
+				"Screen Type": {
+					value: "IPS",
+				},
+				"Screen Size": {
+					value: "",
+					derivedFrom: "screenSize",
+				},
+				Brightness: {
+					value: "600 nits",
+				},
+			},
+			Storage: {
+				Type: {
+					value: "SSD",
+				},
+				"Total Storage Capacity": {
+					value: "",
+					derivedFrom: "storage",
+				},
+			},
+		},
+	},
+	{
+		id: "25",
+		category: "phone",
+		brand: "Google",
+		name: "Pixel 10 Pro XL",
+		model: "Pixel 10 Pro XL",
+		modelNumber: "GA10424-US",
+		year: 2025,
+		description:
+			"Meet Pixel 10 Pro, the new standard for pro phones. Advanced AI with Gemini, unbelievable camera quality, impeccable design, and the next-gen Google Tensor G5 chip.",
+		options: [
+			{
+				id: "1",
+				sku: "15076855",
+				price: 1259,
+				salePrice: 1199,
+				quantity: 0,
+				attributes: {
+					colour: "Porcelain",
+					processor: "Snapdragon 8 Elite",
+					memory: "16GB",
+					storage: "128GB",
+					screenSize: '6.8"',
+					processorBrand: "Qualcomm",
+				},
+			},
+			{
+				id: "2",
+				sku: "15067675",
+				price: 1399,
+				salePrice: 1249,
+				quantity: 2,
+				attributes: {
+					colour: "Porcelain",
+					processor: "Snapdragon 8 Elite",
+					memory: "16GB",
+					storage: "256GB",
+					screenSize: '6.8"',
+					processorBrand: "Qualcomm",
+				},
+			},
+		],
+		images: [
+			{ url: "/products/google-pixel-10.jpg", order: 1 },
+			{ url: "/products/google-pixel-10-2.jpg", order: 2 },
+			{ url: "/products/google-pixel-10-3.jpg", order: 3 },
+			{ url: "/products/google-pixel-10-4.jpg", order: 4 },
+			{ url: "/products/google-pixel-10-5.jpg", order: 5 },
+			{ url: "/products/google-pixel-10-6.jpg", order: 6 },
+		],
+		specifications: {
+			Processor: {
+				Model: {
+					value: "",
+					derivedFrom: "processor",
+				},
+				Brand: {
+					value: "",
+					derivedFrom: "processorBrand",
+				},
+			},
+			Display: {
+				"Display Type": {
+					value: "OLED",
+				},
+				"Screen Type": {
+					value: "IPS",
+				},
+				"Screen Size": {
+					value: "",
+					derivedFrom: "screenSize",
+				},
+				Brightness: {
+					value: "3300 nits",
+				},
+				"Screen Resolution": {
+					value: "1344x2992",
+				},
+				"Refresh Rate": {
+					value: "120Hz",
+				},
+			},
+			Camera: {
+				"Intergrated Camera": {
+					value: "Rear, Telephoto 1, Ultrawide, Front",
+				},
+				"Front-facing Camera": {
+					value: "42 megapixels",
+				},
+				"Rear-facing Camera": {
+					value: "50 megapixels",
+				},
+				"Telephoto Camera": {
+					value: "48 megapixels",
+				},
+				"Ultrawide Camera": {
+					value: "48 megapixels",
+				},
+				HDR: {
+					value: "Yes",
+				},
+			},
+			Storage: {
+				Type: {
+					value: "SSD",
+				},
+				"Total Storage Capacity": {
+					value: "",
+					derivedFrom: "storage",
+				},
+			},
+		},
+	},
 ];
 
 export default products;

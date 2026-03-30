@@ -1,12 +1,12 @@
+import { ChevronDownIcon } from "lucide-react";
+import { useState } from "react";
 import type {
 	CategoryKey,
 	Option,
 	Specification,
 	SpecificationEntry,
 } from "#/types/product";
-import { ChevronDownIcon } from "lucide-react";
-import { Button } from "../ui/button";
-import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 type Props<T extends CategoryKey> = {
 	specifications: Specification<T>;

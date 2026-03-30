@@ -91,17 +91,17 @@ type AnyCartProduct = {
 }[keyof Attribute];
 
 export type {
-	Product,
+	AnyCartProduct,
+	AnyOption,
+	AnyProduct,
 	Attribute,
-	Option,
+	CartProduct,
 	Category,
+	CategoryKey,
+	LaptopAttribute,
+	Option,
+	PhoneAttribute,
+	Product,
 	Specification,
 	SpecificationEntry,
-	LaptopAttribute,
-	PhoneAttribute,
-	AnyProduct,
-	CategoryKey,
-	AnyCartProduct,
-	CartProduct,
-	AnyOption,
 };

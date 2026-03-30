@@ -1,6 +1,10 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import ProductCard from "@/components/products/card";
+import { useState } from "react";
 import EmptyProducts from "#/components/errors/empty-products";
+import ProductsBreadcrumbs from "#/components/products/breadcrumbs";
+import { type FilterKey, filterItems } from "#/data/filterOptions";
+import products from "#/data/products";
+import ProductCard from "@/components/products/card";
 import ProductFilters, {
 	MobileFilter,
 	MobileFilterButtons,
@@ -13,10 +17,6 @@ import {
 	PaginationNext,
 	PaginationPrevious,
 } from "@/components/ui/pagination";
-import { useState } from "react";
-import products from "#/data/products";
-import { filterItems, type FilterKey } from "#/data/filterOptions";
-import ProductsBreadcrumbs from "#/components/products/breadcrumbs";
 
 export const Route = createFileRoute("/products/")({
 	validateSearch: (search) => {
@@ -57,9 +57,11 @@ function RouteComponent() {
 		navigate({
 			search: (prev) => {
 				if (key === "category") {
+					const current = prev.category;
+
 					return {
 						...prev,
-						category: value,
+						category: current === value ? undefined : value,
 						page: 1,
 					};
 				}
@@ -127,7 +129,7 @@ function RouteComponent() {
 					<span className="text-xl text-black">{filteredProducts.length}</span>
 				</h3>
 				{/* Grid */}
-				<main className="grid grid-cols-2 gap-4 md:gap-6 lg:gap-8 min-[640px]:grid-cols-3 min-[1300px]:grid-cols-4">
+				<main className="grid grid-cols-2 gap-4  md:gap-6 lg:gap-8 min-[640px]:grid-cols-3 min-[1300px]:grid-cols-4">
 					{currentProducts.map((product) => (
 						<ProductCard key={product.id} product={product} />
 					))}

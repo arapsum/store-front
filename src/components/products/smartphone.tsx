@@ -13,10 +13,10 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 
 type Props = {
-	product: Product<"laptop">;
+	product: Product<"phone">;
 };
 
-function RenderLaptop({ product }: Props) {
+function RenderSmartphone({ product }: Props) {
 	const images = product.images;
 	const options = product.options;
 
@@ -376,4 +376,4 @@ function RenderLaptop({ product }: Props) {
 	);
 }
 
-export default RenderLaptop;
+export default RenderSmartphone;
