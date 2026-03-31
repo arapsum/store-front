@@ -1,7 +1,4 @@
-import { MinusIcon, PlusIcon, StarIcon } from "lucide-react";
-import { useState } from "react";
-import { toast } from "sonner";
-import { GalleryModal } from "#/components/products/gallery-modal";
+import { Gallery } from "#/components/products/gallery";
 import RenderSpecifications from "#/components/products/specifications";
 import { Separator } from "#/components/ui/separator";
 import { colourToHex } from "#/lib/products";
@@ -11,16 +8,17 @@ import type { LaptopAttribute, Product } from "#/types/product";
 import { ProductDetailsBreadcrumbs } from "@/components/products/breadcrumbs";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import { MinusIcon, PlusIcon, StarIcon } from "lucide-react";
+import { useState } from "react";
+import { toast } from "sonner";
 
 type Props = {
 	product: Product<"phone">;
 };
 
 function RenderSmartphone({ product }: Props) {
-	const images = product.images;
 	const options = product.options;
 
-	const [selectedImage, setSelectedImage] = useState(images[0]);
 	const [selectedOption, setSelectedOption] = useState(options[0]);
 	const [quantity, setQuantity] = useState(1);
 
@@ -74,10 +72,6 @@ function RenderSmartphone({ product }: Props) {
 		if (match) setSelectedOption(match);
 	};
 
-	const MAX_VISIBLE = 4;
-	const visibleImages = images.slice(0, MAX_VISIBLE);
-	const extraCount = images.length - MAX_VISIBLE;
-
 	return (
 		<section className="flex flex-col gap-0">
 			<div className="hidden md:block">
@@ -92,63 +86,10 @@ function RenderSmartphone({ product }: Props) {
 					{/* Top section: Product images and Information */}
 					<section className="grid gap-8 lg:grid-cols-3">
 						{/* Image Galleria */}
-						<div className="flex flex-col-reverse gap-4 md:flex-row lg:col-span-2">
-							{/* Thumbnails */}
-							<aside className="flex flex-row gap-2 mx-auto md:flex-col md:gap-4">
-								{visibleImages.map((image, index) => {
-									const isLast = index === MAX_VISIBLE - 1;
-									const showOverlay = isLast && extraCount > 0;
-
-									const content = (
-										<button
-											type="button"
-											key={`idx-${index}-${image.order}`}
-											onClick={() => !showOverlay && setSelectedImage(image)}
-											className={cn(
-												"relative size-20 shrink-0 overflow-hidden rounded-sm border-2 transition-all md:size-24",
-												selectedImage.url === image.url
-													? "border-foreground"
-													: "border-border hover:border-muted-foreground",
-											)}
-										>
-											<img
-												src={image.url}
-												alt={`Product ${product.brand} ${product.name} ${attributes.colour}`}
-												className="object-contain object-center size-full"
-											/>
-											{showOverlay && (
-												<div className="flex absolute inset-0 justify-center items-center rounded-sm pointer-events-none bg-black/60">
-													<span className="text-sm font-semibold text-white">
-														+{extraCount}
-													</span>
-												</div>
-											)}
-										</button>
-									);
-
-									return showOverlay ? (
-										<GalleryModal
-											key={product.id}
-											product={product}
-											attributes={attributes}
-										>
-											{content}
-										</GalleryModal>
-									) : (
-										content
-									);
-								})}
-							</aside>
-
-							{/* Main Image */}
-							<figure className="overflow-hidden flex-1 rounded-sm border aspect-5/6 md:aspect-square lg:max-h-4/5">
-								<img
-									src={selectedImage.url}
-									alt={`Product ${product.brand} ${product.name} ${attributes.colour} selected image.`}
-									className="object-contain object-center size-full"
-								/>
-							</figure>
-						</div>
+						<Gallery
+							images={product.images}
+							displayName={`${product.brand} ${product.name} - ${attributes.colour} - ${attributes.screenSize} - ${attributes.processor} - ${attributes.memory} RAM - ${attributes.storage} Storage`}
+						/>
 
 						{/* Product Information  */}
 						<section className="flex flex-col space-y-6">
@@ -293,7 +234,7 @@ function RenderSmartphone({ product }: Props) {
 											setQuantity((prev) => (prev -= 1));
 										}}
 									>
-										<MinusIcon className="w-4 h-4" />
+										<MinusIcon className="size-4" />
 										<span className="sr-only">Decrease quantity</span>
 									</Button>
 									<div className="flex justify-center items-center w-12 h-8 text-sm font-medium bg-white rounded-md border border-gray-200 dark:border-gray-800 dark:bg-gray-950">

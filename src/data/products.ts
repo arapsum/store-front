@@ -75,26 +75,32 @@ const products: AnyProduct[] = [
 			{
 				url: "/products/dell-xps-13.jpg",
 				order: 1,
+				alt: "Dell XPS 13 in Graphite - Front view showing display and lid",
 			},
 			{
 				url: "/products/dell-xps-13-2.jpg",
 				order: 2,
+				alt: "Dell XPS 13 in Graphite - Angled three-quarter view with lid open",
 			},
 			{
 				url: "/products/dell-xps-13-3.jpg",
 				order: 3,
+				alt: "Dell XPS 13 in Graphite - Keyboard and trackpad detail",
 			},
 			{
 				url: "/products/dell-xps-13-4.jpg",
 				order: 4,
+				alt: "Dell XPS 13 in Graphite - Side profile showing slim chassis",
 			},
 			{
 				url: "/products/dell-xps-13-5.jpg",
 				order: 5,
+				alt: "Dell XPS 13 in Graphite - Rear view showing aluminum lid",
 			},
 			{
 				url: "/products/dell-xps-13-6.jpg",
 				order: 6,
+				alt: "Dell XPS 13 in Graphite - Port and connectivity detail",
 			},
 		],
 		description:
@@ -228,30 +234,37 @@ const products: AnyProduct[] = [
 			{
 				url: "/products/asus-zenbook-s14.jpg",
 				order: 1,
+				alt: "Asus Zenbook S14 - Front view showing OLED display and lid",
 			},
 			{
 				url: "/products/asus-zenbook-s14-2.jpg",
 				order: 2,
+				alt: "Asus Zenbook S14 - Angled three-quarter view with lid open",
 			},
 			{
 				url: "/products/asus-zenbook-s14-3.jpg",
 				order: 3,
+				alt: "Asus Zenbook S14 - Keyboard and trackpad close-up",
 			},
 			{
 				url: "/products/asus-zenbook-s14-4.jpg",
 				order: 4,
+				alt: "Asus Zenbook S14 - Side profile showing slim chassis depth",
 			},
 			{
 				url: "/products/asus-zenbook-s14-5.jpg",
 				order: 5,
+				alt: "Asus Zenbook S14 - Rear view showing lid design",
 			},
 			{
 				url: "/products/asus-zenbook-s14-6.jpg",
 				order: 6,
+				alt: "Asus Zenbook S14 - Port selection and connectivity detail",
 			},
 			{
 				url: "/products/asus-zenbook-s14-7.jpg",
 				order: 6,
+				alt: "Asus Zenbook S14 - Bottom panel and ventilation detail",
 			},
 		],
 		description:
@@ -367,11 +380,31 @@ const products: AnyProduct[] = [
 			},
 		],
 		images: [
-			{ url: "/products/acer-swift-go-14.jpg", order: 1 },
-			{ url: "/products/acer-swift-go-14-2.jpg", order: 2 },
-			{ url: "/products/acer-swift-go-14-3.jpg", order: 3 },
-			{ url: "/products/acer-swift-go-14-4.jpg", order: 4 },
-			{ url: "/products/acer-swift-go-14-5.jpg", order: 5 },
+			{
+				url: "/products/acer-swift-go-14.jpg",
+				order: 1,
+				alt: "Acer Swift Go 14 OLED in Pure Silver - Front view showing display and lid",
+			},
+			{
+				url: "/products/acer-swift-go-14-2.jpg",
+				order: 2,
+				alt: "Acer Swift Go 14 OLED - Angled three-quarter view with lid open",
+			},
+			{
+				url: "/products/acer-swift-go-14-3.jpg",
+				order: 3,
+				alt: "Acer Swift Go 14 OLED - Keyboard, trackpad and palm rest detail",
+			},
+			{
+				url: "/products/acer-swift-go-14-4.jpg",
+				order: 4,
+				alt: "Acer Swift Go 14 OLED - Side profile showing slim chassis",
+			},
+			{
+				url: "/products/acer-swift-go-14-5.jpg",
+				order: 5,
+				alt: "Acer Swift Go 14 OLED - Rear view and lid close-up",
+			},
 		],
 		description:
 			"The Acer Swift Go 14 combines a stunning OLED display with Intel Core Ultra processing power in an ultra-thin, lightweight chassis. Designed for creators and professionals on the move, it delivers vivid visuals, all-day battery life, and an expansive port selection.",
@@ -442,7 +475,6 @@ const products: AnyProduct[] = [
 					storage: "1TB",
 					colour: "Pure Silver",
 					screenSize: '16.0"',
-
 					processorBrand: "Intel",
 				},
 			},
@@ -463,10 +495,26 @@ const products: AnyProduct[] = [
 			},
 		],
 		images: [
-			{ url: "/products/acer-swift-go-16.jpg", order: 1 },
-			{ url: "/products/acer-swift-go-16-2.jpg", order: 2 },
-			{ url: "/products/acer-swift-go-16-3.jpg", order: 3 },
-			{ url: "/products/acer-swift-go-16-4.jpg", order: 4 },
+			{
+				url: "/products/acer-swift-go-16.jpg",
+				order: 1,
+				alt: "Acer Swift Go 16 OLED in Pure Silver - Front view showing 16-inch display",
+			},
+			{
+				url: "/products/acer-swift-go-16-2.jpg",
+				order: 2,
+				alt: "Acer Swift Go 16 OLED - Angled three-quarter view with lid open",
+			},
+			{
+				url: "/products/acer-swift-go-16-3.jpg",
+				order: 3,
+				alt: "Acer Swift Go 16 OLED - Keyboard and trackpad detail",
+			},
+			{
+				url: "/products/acer-swift-go-16-4.jpg",
+				order: 4,
+				alt: "Acer Swift Go 16 OLED - Side profile showing slim form factor",
+			},
 		],
 		description:
 			"The Acer Swift Go 16 brings a cinematic 16-inch OLED experience to an incredibly slim form factor. Powered by Intel Core Ultra processors, it's built for productivity and content creation with a larger canvas, superior color accuracy, and advanced AI features.",
@@ -557,11 +605,31 @@ const products: AnyProduct[] = [
 			},
 		],
 		images: [
-			{ url: "/products/samsung-galaxy-book5.jpg", order: 1 },
-			{ url: "/products/samsung-galaxy-book5-2.jpg", order: 2 },
-			{ url: "/products/samsung-galaxy-book5-3.jpg", order: 3 },
-			{ url: "/products/samsung-galaxy-book5-4.jpg", order: 4 },
-			{ url: "/products/samsung-galaxy-book5-5.jpg", order: 5 },
+			{
+				url: "/products/samsung-galaxy-book5.jpg",
+				order: 3,
+				alt: "Samsung Galaxy Book5 360 in Sapphire Blue - Front view showing touchscreen display",
+			},
+			{
+				url: "/products/samsung-galaxy-book5-2.jpg",
+				order: 2,
+				alt: "Samsung Galaxy Book5 360 - Angled view with lid open showing keyboard",
+			},
+			{
+				url: "/products/samsung-galaxy-book5-3.jpg",
+				order: 1,
+				alt: "Samsung Galaxy Book5 360 - Tablet mode with touchscreen facing up",
+			},
+			{
+				url: "/products/samsung-galaxy-book5-4.jpg",
+				order: 4,
+				alt: "Samsung Galaxy Book5 360 - Tent mode showing 360-degree hinge",
+			},
+			{
+				url: "/products/samsung-galaxy-book5-5.jpg",
+				order: 5,
+				alt: "Samsung Galaxy Book5 360 - Side profile showing slim 2-in-1 chassis",
+			},
 		],
 		description:
 			"The Samsung Galaxy Book5 360 is a versatile 2-in-1 laptop that seamlessly integrates into the Galaxy ecosystem. With its vivid AMOLED touchscreen, S Pen support, and Intel Core Ultra performance, it adapts effortlessly between laptop and tablet mode.",
@@ -617,7 +685,6 @@ const products: AnyProduct[] = [
 					storage: "512GB",
 					colour: "Moonstone Gray",
 					screenSize: '16.0"',
-
 					processorBrand: "Intel",
 				},
 			},
@@ -653,12 +720,36 @@ const products: AnyProduct[] = [
 			},
 		],
 		images: [
-			{ url: "/products/samsung-galaxy-book5-pro.jpg", order: 1 },
-			{ url: "/products/samsung-galaxy-book5-pro-2.jpg", order: 2 },
-			{ url: "/products/samsung-galaxy-book5-pro-3.jpg", order: 3 },
-			{ url: "/products/samsung-galaxy-book5-pro-4.jpg", order: 4 },
-			{ url: "/products/samsung-galaxy-book5-pro-5.jpg", order: 5 },
-			{ url: "/products/samsung-galaxy-book5-pro-6.jpg", order: 6 },
+			{
+				url: "/products/samsung-galaxy-book5-pro.jpg",
+				order: 1,
+				alt: "Samsung Galaxy Book5 Pro 360 in Moonstone Gray - Front view showing Dynamic AMOLED 2X display",
+			},
+			{
+				url: "/products/samsung-galaxy-book5-pro-2.jpg",
+				order: 2,
+				alt: "Samsung Galaxy Book5 Pro 360 - Angled three-quarter view with lid open",
+			},
+			{
+				url: "/products/samsung-galaxy-book5-pro-3.jpg",
+				order: 3,
+				alt: "Samsung Galaxy Book5 Pro 360 - Tablet mode with S Pen stylus",
+			},
+			{
+				url: "/products/samsung-galaxy-book5-pro-4.jpg",
+				order: 4,
+				alt: "Samsung Galaxy Book5 Pro 360 - Keyboard and trackpad close-up",
+			},
+			{
+				url: "/products/samsung-galaxy-book5-pro-5.jpg",
+				order: 5,
+				alt: "Samsung Galaxy Book5 Pro 360 - Side profile showing ultra-thin chassis",
+			},
+			{
+				url: "/products/samsung-galaxy-book5-pro-6.jpg",
+				order: 6,
+				alt: "Samsung Galaxy Book5 Pro 360 - Tent mode and 360-degree hinge detail",
+			},
 		],
 		description:
 			"The Samsung Galaxy Book5 Pro 360 redefines premium 2-in-1 performance with a breathtaking Dynamic AMOLED 2X display, Intel Core Ultra 9 processor, and the thinnest Galaxy Book chassis yet. Connect your Galaxy ecosystem like never before with seamless cross-device features and Galaxy AI.",
@@ -770,11 +861,31 @@ const products: AnyProduct[] = [
 			},
 		],
 		images: [
-			{ url: "/products/apple-macbook-pro-m4.jpg", order: 1 },
-			{ url: "/products/apple-macbook-pro-m4-2.jpg", order: 2 },
-			{ url: "/products/apple-macbook-pro-m4-3.jpg", order: 3 },
-			{ url: "/products/apple-macbook-pro-m4-4.jpg", order: 4 },
-			{ url: "/products/apple-macbook-pro-m4-5.jpg", order: 5 },
+			{
+				url: "/products/apple-macbook-pro-m4.jpg",
+				order: 1,
+				alt: "Apple MacBook Pro 14-inch M4 in Space Black - Front view showing Liquid Retina XDR display",
+			},
+			{
+				url: "/products/apple-macbook-pro-m4-2.jpg",
+				order: 2,
+				alt: "Apple MacBook Pro 14-inch M4 - Angled view showing keyboard and trackpad",
+			},
+			{
+				url: "/products/apple-macbook-pro-m4-3.jpg",
+				order: 3,
+				alt: "Apple MacBook Pro 14-inch M4 - Side profile showing MagSafe and Thunderbolt ports",
+			},
+			{
+				url: "/products/apple-macbook-pro-m4-4.jpg",
+				order: 4,
+				alt: "Apple MacBook Pro 14-inch M4 - Rear view showing Apple logo on aluminum lid",
+			},
+			{
+				url: "/products/apple-macbook-pro-m4-5.jpg",
+				order: 5,
+				alt: "Apple MacBook Pro 14-inch M4 - Closed lid showing slim profile",
+			},
 		],
 		description:
 			"The MacBook Pro with M4 is the world's most advanced consumer laptop, featuring Apple's breakthrough M4 chip with incredible CPU and GPU performance. With a stunning Liquid Retina XDR display, up to 24 hours of battery life, and a suite of pro connectivity, it handles the most demanding workflows with ease.",
@@ -872,12 +983,36 @@ const products: AnyProduct[] = [
 			},
 		],
 		images: [
-			{ url: "/products/lenovo-yoga-9i.jpg", order: 1 },
-			{ url: "/products/lenovo-yoga-9i-2.jpg", order: 2 },
-			{ url: "/products/lenovo-yoga-9i-3.jpg", order: 3 },
-			{ url: "/products/lenovo-yoga-9i-4.jpg", order: 4 },
-			{ url: "/products/lenovo-yoga-9i-5.jpg", order: 5 },
-			{ url: "/products/lenovo-yoga-9i-6.jpg", order: 6 },
+			{
+				url: "/products/lenovo-yoga-9i.jpg",
+				order: 1,
+				alt: "Lenovo Yoga 9i Gen 9 in Oatmeal - Front view showing OLED touchscreen display",
+			},
+			{
+				url: "/products/lenovo-yoga-9i-2.jpg",
+				order: 2,
+				alt: "Lenovo Yoga 9i Gen 9 - Angled view showing keyboard and rotating soundbar hinge",
+			},
+			{
+				url: "/products/lenovo-yoga-9i-3.jpg",
+				order: 3,
+				alt: "Lenovo Yoga 9i Gen 9 - Tablet mode with display facing outward",
+			},
+			{
+				url: "/products/lenovo-yoga-9i-4.jpg",
+				order: 4,
+				alt: "Lenovo Yoga 9i Gen 9 - Tent mode showing 360-degree flexibility",
+			},
+			{
+				url: "/products/lenovo-yoga-9i-5.jpg",
+				order: 5,
+				alt: "Lenovo Yoga 9i Gen 9 - Side profile showing rotating soundbar speaker hinge",
+			},
+			{
+				url: "/products/lenovo-yoga-9i-6.jpg",
+				order: 6,
+				alt: "Lenovo Yoga 9i Gen 9 - Keyboard close-up with backlit keys",
+			},
 		],
 		description:
 			"The Lenovo Yoga 9i is the ultimate 2-in-1 laptop, blending iconic design with rotating soundbar speakers and a buttery-smooth OLED touch display. Powered by Intel Core Ultra processors and featuring 360-degree flexibility, it transitions effortlessly between laptop, tent, stand, and tablet modes.",
@@ -954,11 +1089,31 @@ const products: AnyProduct[] = [
 			},
 		],
 		images: [
-			{ url: "/products/lenovo-yoga-slim-7x.jpg", order: 1 },
-			{ url: "/products/lenovo-yoga-slim-7x-2.jpg", order: 2 },
-			{ url: "/products/lenovo-yoga-slim-7x-3.jpg", order: 3 },
-			{ url: "/products/lenovo-yoga-slim-7x-4.jpg", order: 4 },
-			{ url: "/products/lenovo-yoga-slim-7x-5.jpg", order: 5 },
+			{
+				url: "/products/lenovo-yoga-slim-7x.jpg",
+				order: 1,
+				alt: "Lenovo Yoga Slim 7x Gen 9 in Cosmic Blue - Front view showing OLED display and ultra-thin lid",
+			},
+			{
+				url: "/products/lenovo-yoga-slim-7x-2.jpg",
+				order: 2,
+				alt: "Lenovo Yoga Slim 7x Gen 9 - Angled three-quarter view with lid open",
+			},
+			{
+				url: "/products/lenovo-yoga-slim-7x-3.jpg",
+				order: 3,
+				alt: "Lenovo Yoga Slim 7x Gen 9 - Keyboard and trackpad close-up",
+			},
+			{
+				url: "/products/lenovo-yoga-slim-7x-4.jpg",
+				order: 4,
+				alt: "Lenovo Yoga Slim 7x Gen 9 - Side profile highlighting 12.9mm ultra-slim chassis",
+			},
+			{
+				url: "/products/lenovo-yoga-slim-7x-5.jpg",
+				order: 5,
+				alt: "Lenovo Yoga Slim 7x Gen 9 - Rear view showing aluminum lid and Lenovo logo",
+			},
 		],
 		description:
 			"The Lenovo Yoga Slim 7x is redefining ultra-thin performance with the Snapdragon X Elite platform. Remarkably thin at just 12.9mm, it packs an OLED display, exceptional AI-driven performance, and Copilot+ PC capabilities into a featherlight chassis that weighs just 1.28kg.",
@@ -1065,11 +1220,31 @@ const products: AnyProduct[] = [
 			},
 		],
 		images: [
-			{ url: "/products/hp-probook-460-g11.jpg", order: 1 },
-			{ url: "/products/hp-probook-460-g11-2.jpg", order: 2 },
-			{ url: "/products/hp-probook-460-g11-3.jpg", order: 3 },
-			{ url: "/products/hp-probook-460-g11-4.jpg", order: 4 },
-			{ url: "/products/hp-probook-460-g11-5.jpg", order: 5 },
+			{
+				url: "/products/hp-probook-460-g11.jpg",
+				order: 1,
+				alt: "HP ProBook 460 G11 in Pike Silver - Front view showing 16-inch IPS display",
+			},
+			{
+				url: "/products/hp-probook-460-g11-2.jpg",
+				order: 2,
+				alt: "HP ProBook 460 G11 - Angled three-quarter view with lid open",
+			},
+			{
+				url: "/products/hp-probook-460-g11-3.jpg",
+				order: 3,
+				alt: "HP ProBook 460 G11 - Keyboard with fingerprint reader and security features",
+			},
+			{
+				url: "/products/hp-probook-460-g11-4.jpg",
+				order: 4,
+				alt: "HP ProBook 460 G11 - Side profile showing port selection",
+			},
+			{
+				url: "/products/hp-probook-460-g11-5.jpg",
+				order: 5,
+				alt: "HP ProBook 460 G11 - Rear view showing durable MIL-SPEC chassis",
+			},
 		],
 		description:
 			"The HP ProBook 460 G11 is built for business professionals who demand reliability and performance. Featuring Intel Core Ultra vPro processors, military-grade durability, and enterprise-level security with HP Wolf Security, it keeps your work protected and productive all day long.",
@@ -1150,9 +1325,21 @@ const products: AnyProduct[] = [
 			},
 		],
 		images: [
-			{ url: "/products/acer-swift-go-14.jpg", order: 1 },
-			{ url: "/products/acer-swift-go-14-2.jpg", order: 2 },
-			{ url: "/products/acer-swift-go-14-3.jpg", order: 3 },
+			{
+				url: "/products/acer-swift-go-14.jpg",
+				order: 1,
+				alt: "Acer Swift Go 14 OLED in Silver - Front view showing display",
+			},
+			{
+				url: "/products/acer-swift-go-14-2.jpg",
+				order: 2,
+				alt: "Acer Swift Go 14 OLED - Angled view with lid open showing keyboard",
+			},
+			{
+				url: "/products/acer-swift-go-14-3.jpg",
+				order: 3,
+				alt: "Acer Swift Go 14 OLED - Side profile showing thin chassis",
+			},
 		],
 		description:
 			"A lightweight OLED laptop designed for productivity and vibrant visuals with Intel's latest processors.",
@@ -1209,10 +1396,26 @@ const products: AnyProduct[] = [
 			},
 		],
 		images: [
-			{ url: "/products/samsung-galaxy-book-5.jpg", order: 1 },
-			{ url: "/products/samsung-galaxy-book-5-2.jpg", order: 2 },
-			{ url: "/products/samsung-galaxy-book-5-3.jpg", order: 3 },
-			{ url: "/products/samsung-galaxy-book-5-4.jpg", order: 4 },
+			{
+				url: "/products/samsung-galaxy-book-5.jpg",
+				order: 1,
+				alt: "Samsung Galaxy Book5 Pro in Moonstone Gray - Front view showing 16-inch AMOLED display",
+			},
+			{
+				url: "/products/samsung-galaxy-book-5-2.jpg",
+				order: 2,
+				alt: "Samsung Galaxy Book5 Pro - Angled three-quarter view with lid open",
+			},
+			{
+				url: "/products/samsung-galaxy-book-5-3.jpg",
+				order: 3,
+				alt: "Samsung Galaxy Book5 Pro - Keyboard and trackpad close-up",
+			},
+			{
+				url: "/products/samsung-galaxy-book-5-4.jpg",
+				order: 4,
+				alt: "Samsung Galaxy Book5 Pro - Side profile showing ultra-thin design",
+			},
 		],
 		description:
 			"Premium Galaxy Book with AMOLED display, ultra-thin design, and seamless ecosystem integration.",
@@ -1278,9 +1481,21 @@ const products: AnyProduct[] = [
 			},
 		],
 		images: [
-			{ url: "/products/apple-macbook-pro-14.jpg", order: 1 },
-			{ url: "/products/apple-macbook-pro-14-2.jpg", order: 2 },
-			{ url: "/products/apple-macbook-pro-14-3.jpg", order: 3 },
+			{
+				url: "/products/apple-macbook-pro-14.jpg",
+				order: 1,
+				alt: "Apple MacBook Pro 14 M4 in Space Black - Front view showing Liquid Retina XDR display",
+			},
+			{
+				url: "/products/apple-macbook-pro-14-2.jpg",
+				order: 2,
+				alt: "Apple MacBook Pro 14 M4 - Angled view showing keyboard and Force Touch trackpad",
+			},
+			{
+				url: "/products/apple-macbook-pro-14-3.jpg",
+				order: 3,
+				alt: "Apple MacBook Pro 14 M4 - Closed lid showing Apple logo on aluminum chassis",
+			},
 		],
 		description:
 			"Supercharged with Apple M4 chips delivering exceptional performance and battery life.",
@@ -1321,8 +1536,16 @@ const products: AnyProduct[] = [
 			},
 		],
 		images: [
-			{ url: "/products/lenovo-yoga-9i.jpg", order: 1 },
-			{ url: "/products/lenovo-yoga-9i-2.jpg", order: 2 },
+			{
+				url: "/products/lenovo-yoga-9i.jpg",
+				order: 1,
+				alt: "Lenovo Yoga 9i Gen 9 in Storm Grey - Front view showing OLED touchscreen",
+			},
+			{
+				url: "/products/lenovo-yoga-9i-2.jpg",
+				order: 2,
+				alt: "Lenovo Yoga 9i Gen 9 - Angled view showing keyboard and rotating soundbar hinge",
+			},
 		],
 		description:
 			"Convertible 2-in-1 laptop with premium build, OLED display, and versatile usage modes.",
@@ -1359,10 +1582,26 @@ const products: AnyProduct[] = [
 			},
 		],
 		images: [
-			{ url: "/products/hp-probook-450.jpg", order: 1 },
-			{ url: "/products/hp-probook-450-2.jpg", order: 3 },
-			{ url: "/products/hp-probook-450-3.jpg", order: 2 },
-			{ url: "/products/hp-probook-450-4.jpg", order: 4 },
+			{
+				url: "/products/hp-probook-450.jpg",
+				order: 1,
+				alt: "HP ProBook 450 G10 in Silver - Front view showing 15.6-inch display",
+			},
+			{
+				url: "/products/hp-probook-450-2.jpg",
+				order: 3,
+				alt: "HP ProBook 450 G10 - Keyboard and trackpad with fingerprint reader",
+			},
+			{
+				url: "/products/hp-probook-450-3.jpg",
+				order: 2,
+				alt: "HP ProBook 450 G10 - Angled three-quarter view with lid open",
+			},
+			{
+				url: "/products/hp-probook-450-4.jpg",
+				order: 4,
+				alt: "HP ProBook 450 G10 - Side profile showing port layout",
+			},
 		],
 		description:
 			"Reliable business laptop with solid performance and essential security features.",
@@ -1402,9 +1641,21 @@ const products: AnyProduct[] = [
 			},
 		],
 		images: [
-			{ url: "/products/acer-swift-go-16-ai.jpg", order: 1 },
-			{ url: "/products/acer-swift-go-16-ai-2.jpg", order: 2 },
-			{ url: "/products/acer-swift-go-16-ai-3.jpg", order: 3 },
+			{
+				url: "/products/acer-swift-go-16-ai.jpg",
+				order: 1,
+				alt: "Acer Swift Go 16 in Silver - Front view showing 16-inch display",
+			},
+			{
+				url: "/products/acer-swift-go-16-ai-2.jpg",
+				order: 2,
+				alt: "Acer Swift Go 16 - Angled view with lid open showing keyboard",
+			},
+			{
+				url: "/products/acer-swift-go-16-ai-3.jpg",
+				order: 3,
+				alt: "Acer Swift Go 16 - Side profile showing slim large-screen chassis",
+			},
 		],
 		description:
 			"Large-screen productivity laptop with slim design and strong performance.",
@@ -1437,10 +1688,26 @@ const products: AnyProduct[] = [
 			},
 		],
 		images: [
-			{ url: "/products/samsung-galaxy-book-5-360.jpg", order: 1 },
-			{ url: "/products/samsung-galaxy-book-5-360-2.jpg", order: 2 },
-			{ url: "/products/samsung-galaxy-book-5-360-3.jpg", order: 3 },
-			{ url: "/products/samsung-galaxy-book-5-360-4.jpg", order: 4 },
+			{
+				url: "/products/samsung-galaxy-book-5-360.jpg",
+				order: 1,
+				alt: "Samsung Galaxy Book5 360 in Silver - Front view showing 15.6-inch AMOLED touchscreen",
+			},
+			{
+				url: "/products/samsung-galaxy-book-5-360-2.jpg",
+				order: 2,
+				alt: "Samsung Galaxy Book5 360 - Tablet mode with S Pen stylus",
+			},
+			{
+				url: "/products/samsung-galaxy-book-5-360-3.jpg",
+				order: 3,
+				alt: "Samsung Galaxy Book5 360 - Tent mode showing 360-degree hinge",
+			},
+			{
+				url: "/products/samsung-galaxy-book-5-360-4.jpg",
+				order: 4,
+				alt: "Samsung Galaxy Book5 360 - Side profile showing slim 2-in-1 form factor",
+			},
 		],
 		description:
 			"Flexible 2-in-1 laptop with AMOLED display and S Pen support.",
@@ -1477,11 +1744,31 @@ const products: AnyProduct[] = [
 			},
 		],
 		images: [
-			{ url: "/products/lenovo-yoga-7i.jpg", order: 1 },
-			{ url: "/products/lenovo-yoga-7i-2.jpg", order: 2 },
-			{ url: "/products/lenovo-yoga-7i-3.jpg", order: 3 },
-			{ url: "/products/lenovo-yoga-7i-4.jpg", order: 4 },
-			{ url: "/products/lenovo-yoga-7i-5.jpg", order: 5 },
+			{
+				url: "/products/lenovo-yoga-7i.jpg",
+				order: 1,
+				alt: "Lenovo Yoga 7i Gen 9 in Arctic Grey - Front view showing touchscreen display",
+			},
+			{
+				url: "/products/lenovo-yoga-7i-2.jpg",
+				order: 2,
+				alt: "Lenovo Yoga 7i Gen 9 - Angled view with lid open showing keyboard",
+			},
+			{
+				url: "/products/lenovo-yoga-7i-3.jpg",
+				order: 3,
+				alt: "Lenovo Yoga 7i Gen 9 - Tablet mode with display facing outward",
+			},
+			{
+				url: "/products/lenovo-yoga-7i-4.jpg",
+				order: 4,
+				alt: "Lenovo Yoga 7i Gen 9 - Tent mode showing 360-degree hinge flexibility",
+			},
+			{
+				url: "/products/lenovo-yoga-7i-5.jpg",
+				order: 5,
+				alt: "Lenovo Yoga 7i Gen 9 - Side profile showing slim chassis",
+			},
 		],
 		description: "Balanced 2-in-1 laptop offering performance and portability.",
 		specifications: {
@@ -1533,10 +1820,26 @@ const products: AnyProduct[] = [
 			},
 		],
 		images: [
-			{ url: "/products/dell-pro-16.jpg", order: 1 },
-			{ url: "/products/dell-pro-16-2.jpg", order: 2 },
-			{ url: "/products/dell-pro-16-3.jpg", order: 3 },
-			{ url: "/products/dell-pro-16-4.jpg", order: 4 },
+			{
+				url: "/products/dell-pro-16.jpg",
+				order: 1,
+				alt: "Dell Pro 16 in Magnetite Black - Front view showing 16-inch FHD IPS display",
+			},
+			{
+				url: "/products/dell-pro-16-2.jpg",
+				order: 2,
+				alt: "Dell Pro 16 - Angled three-quarter view with lid open showing keyboard",
+			},
+			{
+				url: "/products/dell-pro-16-3.jpg",
+				order: 3,
+				alt: "Dell Pro 16 - Keyboard close-up with backlit keys and Windows Copilot key",
+			},
+			{
+				url: "/products/dell-pro-16-4.jpg",
+				order: 4,
+				alt: "Dell Pro 16 - Side profile showing port selection and slim chassis",
+			},
 		],
 		specifications: {
 			Processor: {
@@ -1618,10 +1921,26 @@ const products: AnyProduct[] = [
 			},
 		],
 		images: [
-			{ url: "/products/samsung-galaxy-S25.jpg", order: 1 },
-			{ url: "/products/samsung-galaxy-S25-2.jpg", order: 2 },
-			{ url: "/products/samsung-galaxy-S25-3.jpg", order: 3 },
-			{ url: "/products/samsung-galaxy-S25-4.jpg", order: 4 },
+			{
+				url: "/products/samsung-galaxy-S25.jpg",
+				order: 1,
+				alt: "Samsung Galaxy S25 in Navy - Front view showing 6.2-inch AMOLED display",
+			},
+			{
+				url: "/products/samsung-galaxy-S25-2.jpg",
+				order: 2,
+				alt: "Samsung Galaxy S25 in Navy - Rear view showing triple camera system",
+			},
+			{
+				url: "/products/samsung-galaxy-S25-3.jpg",
+				order: 3,
+				alt: "Samsung Galaxy S25 - Side profile showing slim frame and volume buttons",
+			},
+			{
+				url: "/products/samsung-galaxy-S25-4.jpg",
+				order: 4,
+				alt: "Samsung Galaxy S25 - Angled view showing display and rear panel finish",
+			},
 		],
 		specifications: {
 			Processor: {
@@ -1703,12 +2022,36 @@ const products: AnyProduct[] = [
 			},
 		],
 		images: [
-			{ url: "/products/google-pixel-10.jpg", order: 1 },
-			{ url: "/products/google-pixel-10-2.jpg", order: 2 },
-			{ url: "/products/google-pixel-10-3.jpg", order: 3 },
-			{ url: "/products/google-pixel-10-4.jpg", order: 4 },
-			{ url: "/products/google-pixel-10-5.jpg", order: 5 },
-			{ url: "/products/google-pixel-10-6.jpg", order: 6 },
+			{
+				url: "/products/google-pixel-10.jpg",
+				order: 1,
+				alt: "Google Pixel 10 Pro XL in Porcelain - Front view showing 6.8-inch OLED display",
+			},
+			{
+				url: "/products/google-pixel-10-2.jpg",
+				order: 2,
+				alt: "Google Pixel 10 Pro XL - Rear view showing quad camera array with telephoto and ultrawide lenses",
+			},
+			{
+				url: "/products/google-pixel-10-3.jpg",
+				order: 3,
+				alt: "Google Pixel 10 Pro XL - Side profile showing slim frame and power button",
+			},
+			{
+				url: "/products/google-pixel-10-4.jpg",
+				order: 4,
+				alt: "Google Pixel 10 Pro XL - Angled view showing display and Porcelain finish",
+			},
+			{
+				url: "/products/google-pixel-10-5.jpg",
+				order: 5,
+				alt: "Google Pixel 10 Pro XL - Camera system close-up showing lens array detail",
+			},
+			{
+				url: "/products/google-pixel-10-6.jpg",
+				order: 6,
+				alt: "Google Pixel 10 Pro XL - Bottom edge showing USB-C port and speaker grille",
+			},
 		],
 		specifications: {
 			Processor: {

@@ -62,7 +62,7 @@ type Product<T extends CategoryKey> = {
 	name: string;
 	model: string;
 	modelNumber: string;
-	images: { url: string; order: number }[];
+	images: { url: string; order: number; alt: string }[];
 	options: Option<T>[];
 	year: number;
 	description?: string;
@@ -78,7 +78,7 @@ type CartProduct<T extends CategoryKey> = {
 	name: string;
 	model: string;
 	modelNumber: string;
-	images: { url: string; order: number }[];
+	images: { url: string; order: number; alt?: string }[];
 	option: Option<T>;
 	year: number;
 	description?: string;
