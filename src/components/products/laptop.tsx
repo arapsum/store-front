@@ -1,7 +1,7 @@
 import { MinusIcon, PlusIcon, StarIcon } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
-import { GalleryModal, Gallery } from "#/components/products/gallery";
+import { Gallery } from "#/components/products/gallery";
 import RenderSpecifications from "#/components/products/specifications";
 import { Separator } from "#/components/ui/separator";
 import { colourToHex } from "#/lib/products";
